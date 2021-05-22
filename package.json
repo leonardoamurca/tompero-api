@@ -1,0 +1,24 @@
+{
+  "name": "tompero-api",
+  "description": "A REST API consumed by tompero web project.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardoamurca/tompero-api.git"
+  },
+  "keywords": [
+    "recipes",
+    "tompero",
+    "food"
+  ],
+  "author": "Leonardo Murça",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leonardoamurca/tompero-api/issues"
+  },
+  "homepage": "https://github.com/leonardoamurca/tompero-api#readme"
+}
