@@ -6,6 +6,7 @@ module.exports = {
     username: process.env.POSTGRES_USERNAME,
     password: process.env.POSTGRES_PASS,
     database: process.env.POSTGRES_DB,
+    port: process.env.POSTGRES_PORT,
     define: {
       timestamps: true,
       underscored: true,
@@ -17,6 +18,7 @@ module.exports = {
     username: process.env.POSTGRES_USERNAME,
     password: process.env.POSTGRES_PASS,
     database: process.env.POSTGRES_DB,
+    port: process.env.POSTGRES_PORT,
     define: {
       timestamps: true,
       underscored: true,
