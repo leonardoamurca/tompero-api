@@ -2,26 +2,37 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("users", {
+    return queryInterface.createTable("recipes", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
       },
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: "users", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
       name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      email: {
+      description: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      password: {
+      ingredients: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      avatar_url: {
+      directions: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      image_url: {
         type: Sequelize.STRING,
         allowNull: true,
       },
