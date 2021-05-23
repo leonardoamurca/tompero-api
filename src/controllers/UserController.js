@@ -58,7 +58,7 @@ module.exports = {
         }
       }
 
-      return res.status(404).json({ error: "User not found!" });
+      return res.status(404).json({ error: "Usuário ou senha incorretos!" });
     } catch (err) {
       return res.status(err.code).json({ error: err.message });
     }
