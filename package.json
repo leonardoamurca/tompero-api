@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/leonardoamurca/tompero-api.git"
   },
-  "keywords": ["recipes", "tompero", "food"],
+  "keywords": [
+    "recipes",
+    "tompero",
+    "food"
+  ],
   "author": "Leonardo Murça",
   "license": "MIT",
   "bugs": {
@@ -20,6 +24,8 @@
   },
   "homepage": "https://github.com/leonardoamurca/tompero-api#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
