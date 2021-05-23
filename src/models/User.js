@@ -17,6 +17,14 @@ class User extends Model {
   static associate(models) {
     this.hasMany(models.Recipe, { foreignKey: "user_id", as: "recipes" });
   }
+
+  static async findByEmail(email) {
+    return this.findOne({ where: { email } });
+  }
+
+  static async updateToken(user, token) {
+    return user.update({ token });
+  }
 }
 
 module.exports = User;

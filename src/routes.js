@@ -7,6 +7,7 @@ const routes = express.Router();
 
 routes.get("/users", UserController.retrieveAll);
 routes.post("/users", UserController.store);
+routes.post("/users/signin", UserController.signIn);
 
 routes.get("/recipes", RecipeController.retrieveAll);
 routes.get("/users/:user_id/recipes", RecipeController.retrieveUserRecipes);
