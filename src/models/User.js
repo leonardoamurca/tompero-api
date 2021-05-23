@@ -22,6 +22,10 @@ class User extends Model {
     return this.findOne({ where: { email } });
   }
 
+  static async findByToken(token) {
+    return this.findOne({ where: { token } });
+  }
+
   static async updateToken(user, token) {
     return user.update({ token });
   }
