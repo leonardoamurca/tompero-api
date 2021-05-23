@@ -10,6 +10,19 @@ module.exports = {
     return res.json(users);
   },
 
+  async retrieveOne(req, res) {
+    try {
+      const { id } = req.params;
+      const user = await User.findByPk(id, {
+        attributes: { exclude: "password" },
+      });
+
+      return res.json(user);
+    } catch (err) {
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+
   async store(req, res) {
     try {
       const { name, email, password } = req.body;

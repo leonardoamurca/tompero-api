@@ -6,6 +6,7 @@ const RecipeController = require("./controllers/RecipeController");
 const routes = express.Router();
 
 // User routes
+routes.get("/users/:id", UserController.retrieveOne);
 routes.get("/users", UserController.retrieveAll);
 routes.post("/users", UserController.store);
 routes.post("/users/signin", UserController.signIn);
