@@ -10,6 +10,7 @@ routes.get("/users/:id", UserController.retrieveOne);
 routes.get("/users", UserController.retrieveAll);
 routes.post("/users", UserController.store);
 routes.post("/users/signin", UserController.signIn);
+routes.post("/users/logout", UserController.endSession);
 
 // Recipe routes
 routes.get("/recipes", RecipeController.retrieveAll);

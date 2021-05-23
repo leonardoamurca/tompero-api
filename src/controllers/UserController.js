@@ -63,4 +63,17 @@ module.exports = {
       return res.status(err.code).json({ error: err.message });
     }
   },
+
+  async endSession(req, res) {
+    try {
+      const { token } = req.headers;
+
+      const user = await User.findByToken(token);
+      const updatedUser = await User.updateToken(user, null);
+
+      return res.status(200).json({ message: "Usuário deslogado!" });
+    } catch (err) {
+      return res.status(err.code).json({ error: err.message });
+    }
+  },
 };
