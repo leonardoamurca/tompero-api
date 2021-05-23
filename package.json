@@ -4,21 +4,29 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "sequelize": "sequelize-cli",
+    "dev": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leonardoamurca/tompero-api.git"
   },
-  "keywords": [
-    "recipes",
-    "tompero",
-    "food"
-  ],
+  "keywords": ["recipes", "tompero", "food"],
   "author": "Leonardo Murça",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/leonardoamurca/tompero-api/issues"
   },
-  "homepage": "https://github.com/leonardoamurca/tompero-api#readme"
+  "homepage": "https://github.com/leonardoamurca/tompero-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "sequelize-cli": "^6.2.0"
+  }
 }
