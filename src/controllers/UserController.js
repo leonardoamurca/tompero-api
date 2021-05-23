@@ -5,7 +5,7 @@ const validatePassword = require("../utils/validatePassword");
 
 module.exports = {
   async retrieveAll(req, res) {
-    const users = await User.findAll();
+    const users = await User.findAll({ attributes: { exclude: "password" } });
 
     return res.json(users);
   },
