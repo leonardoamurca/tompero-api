@@ -11,4 +11,5 @@ routes.post("/users", UserController.store);
 routes.get("/recipes", RecipeController.retrieveAll);
 routes.get("/users/:user_id/recipes", RecipeController.retrieveUserRecipes);
 routes.post("/users/:user_id/recipes", RecipeController.store);
+
 module.exports = routes;

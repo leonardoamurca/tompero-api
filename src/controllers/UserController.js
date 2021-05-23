@@ -1,4 +1,6 @@
 const User = require("../models/User");
+const hashPassword = require("../utils/hashPassword");
+const generateToken = require("../utils/generateToken");
 
 module.exports = {
   async retrieveAll(req, res) {
@@ -8,10 +10,21 @@ module.exports = {
   },
 
   async store(req, res) {
-    const { name, email, password } = req.body;
+    try {
+      const { name, email, password } = req.body;
 
-    const user = await User.create({ name, email, password });
+      const psswdHash = await hashPassword(password);
+      const token = await generateToken();
+      const user = await User.create({
+        name,
+        email,
+        password: psswdHash,
+        token,
+      });
 
-    return res.json(user);
+      return res.status(201).json(user);
+    } catch (err) {
+      return res.status(err.code).json({ error: err.message });
+    }
   },
 };

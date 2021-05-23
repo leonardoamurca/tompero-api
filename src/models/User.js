@@ -8,6 +8,7 @@ class User extends Model {
         email: DataTypes.STRING,
         password: DataTypes.STRING,
         avatar_url: DataTypes.STRING,
+        token: DataTypes.TEXT,
       },
       { sequelize }
     );
