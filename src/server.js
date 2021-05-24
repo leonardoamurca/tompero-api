@@ -7,7 +7,7 @@ require("./database");
 
 const app = express();
 
-app.use(cors({ origin: "https://tompero-frontend.herokuapp.com/" }));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
