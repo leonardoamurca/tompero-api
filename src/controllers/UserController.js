@@ -76,4 +76,19 @@ module.exports = {
       return res.status(err.code).json({ error: err.message });
     }
   },
+
+  async me(req, res) {
+    try {
+      const { token } = req.headers;
+
+      const user = await User.findByToken(token);
+      if (!user) {
+        res.status(404).json({ error: "Usuario não encontrado" });
+      }
+
+      return res.status(200).json(user);
+    } catch (err) {
+      return res.status(err.code).json({ error: err.message });
+    }
+  },
 };

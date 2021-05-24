@@ -19,6 +19,17 @@ module.exports = {
     return res.json(recipes);
   },
 
+  async retrieveOne(req, res) {
+    try {
+      const { id } = req.params;
+      const recipe = await Recipe.findByPk(id);
+
+      return res.status(200).json(recipe);
+    } catch (err) {
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  },
+
   async store(req, res) {
     const { user_id } = req.params;
     const { token } = req.headers;
